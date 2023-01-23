@@ -1,4 +1,6 @@
 void main() {
+  print("\n---\n");
+
   List<int> numerozinhos = [10, 15, 20, 25];
   print("Lista original de números");
   print(numerozinhos);
@@ -38,8 +40,24 @@ void main() {
 
   print("\nFunção fold()");
   const int valorInicial = 100;
-  var SomaTotalComInicial = numerozinhos.fold(valorInicial, (numeroAtual, numeroSeguinte) => numeroAtual + numeroSeguinte);
-  print("A soma de todos os elementos da lista, partindo do número 100 é: $SomaTotalComInicial");
+  var SomaTotalComInicial = numerozinhos.fold(valorInicial,
+      (numeroAtual, numeroSeguinte) => numeroAtual + numeroSeguinte);
+  print(
+      "A soma de todos os elementos da lista, partindo do número 100 é: $SomaTotalComInicial");
   print(SomaTotalComInicial.runtimeType);
 
+  // sublist() - Cria uma sublista baseada na lista original.
+  print("\nFunção sublist()");
+  List<int> subListaDeNumerozinhos = numerozinhos.sublist(1, 4);
+  print(subListaDeNumerozinhos);
+
+  // where() - Cria um iterável calculado por uma função condicional baseada na lista original.
+  print("\nFunção where()");
+  Iterable maiorQue20 = numerozinhos.where((element) => element > 15);
+  print(maiorQue20);
+  print("${maiorQue20.firstWhere((element) => element > 15)}");
+  print("${maiorQue20.lastWhere((element) => element > 15)}");
+  print(maiorQue20.runtimeType);
+
+  print("\n");
 }
