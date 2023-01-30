@@ -1,8 +1,8 @@
 import 'dart:io';
 
 // Funções podem ser definidas no mesmo arquivo Dart, fora da Main, ou num arquivo separado
-bool funcMaiorDeIdade(int idade) {
-  if (idade >= 18) {
+bool funcMaiorDeIdade(int? idade) {
+  if (idade != null && idade >= 18) {
     return true;
   } else {
     return false;
@@ -23,12 +23,27 @@ bool funcMaiorDeIdade(int idade) {
 // Função com parâmetros Posicionais Obrigatórios
 void funcMaiorIdadeComTexto(String? nomeDaPessoa, int? idade) {
   if (idade != null) {
-  if (idade >= 18) {
-    print("$nomeDaPessoa, você é maior de idade!");
-  } else {
-    print("$nomeDaPessoa, você NÃO é maior de idade!");
+    if (idade >= 18) {
+      print("$nomeDaPessoa, você é maior de idade!");
+    } else {
+      print("$nomeDaPessoa, você NÃO é maior de idade!");
+    }
   }
-}}
+}
+
+// Função com parâmetro Nomeado Opcional/parâmetro Padrão/parâmetro Required
+void funcEscolhaDeVeiculo(String? nome, int? idade,
+    {bool? querHabilitacao, String veiculoDePreferencia = "qualquer um", required String cor}) {
+  if (querHabilitacao != null && querHabilitacao && idade != null && idade >= 18) {
+    print(
+        ("$nome, você tem $idade anos, você já pode ter uma habilitação e seu veículo de interesse é $veiculoDePreferencia na cor $cor."));
+  } else {
+    if (idade != null) {
+      print(
+          ("$nome, você tem $idade anos e seu veículo de interesse é $veiculoDePreferencia na cor $cor."));
+    }
+  }
+}
 
 void main() {
   print("\nInforme o seu nome: ");
@@ -45,4 +60,6 @@ void main() {
   print("\nOutras chamadas de funções\n");
   funcMaiorIdadeComTexto(nome, anos);
   funcMaiorIdadeComTexto("Fulano", 17);
+  funcEscolhaDeVeiculo(nome, anos, querHabilitacao: funcMaiorDeIdade(anos), cor: "preta");
+  funcEscolhaDeVeiculo("fulano", 17, querHabilitacao: true, veiculoDePreferencia: "Moto", cor: "verde");
 }
