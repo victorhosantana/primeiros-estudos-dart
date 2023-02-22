@@ -9,9 +9,11 @@ void main() {
 /* Criação de Classes e utilização de Heranças
 
   As Heranças podem ajudar a reduzir a quantidade de código necessário para a utilização de diversas classes com propriedades iguais.
+
+  Entre os relacionamentos da Herança, as propriedades e métodos são compartilhados em nível de parentesco horizontal (Mãe -> Filha). Porém, esta relação não é recíproca e nem possível em níveis horizontais (Irmã -> Irmã).
 */
 
-// Superclasse
+// Superclasse ou classe Mãe
 class Alimentos {
   String nome;
   double peso;
@@ -25,7 +27,7 @@ class Alimentos {
   }
 }
 
-// Subclasse
+// Subclasse ou Classe Filha
 class Frutas extends Alimentos {
   bool? isMadura;
 
