@@ -18,6 +18,13 @@ void main() {
       "${algumaRespostaDoUsuario.runtimeType}");
   print("---");
 
+// dynamic serve para criar um objeto em que é possível alterar o tipo durante a execução do código
+  dynamic leituraDoNumero = 6.47;
+  print(leituraDoNumero.runtimeType);
+  leituraDoNumero = "Seis e quarenta e sete";
+  print(leituraDoNumero.runtimeType);
+  print("---");
+
 // const serve para impossibilitar a alteração de uma variável
   const String umNome = "Fulano da Silva";
   print(umNome);
