@@ -29,6 +29,7 @@ void main(List<String> args) {
               "[ 4 ] - Corrida]\n"
               "[ 5 ] - Natação]\n"
               "[ 6 ] - Patins]\n"
+              "[ 7 ] - Outro\n"
               "Informe o exercício:");
 
           String? respostaExercicio = stdin.readLineSync();
@@ -36,22 +37,33 @@ void main(List<String> args) {
           if (respostaExercicio != null) {
             switch (respostaExercicio) {
               case "1":
-              fulano01.registrarTreino(Treino.musculacao);
+                fulano01.registrarTreino(Treino.musculacao);
                 break;
               case "2":
-              fulano01.registrarTreino(Treino.bicicleta);
+                fulano01.registrarTreino(Treino.bicicleta);
                 break;
               case "3":
-              fulano01.registrarTreino(Treino.basquete);
+                fulano01.registrarTreino(Treino.basquete);
                 break;
               case "4":
-              fulano01.registrarTreino(Treino.corrida);
+                fulano01.registrarTreino(Treino.corrida);
                 break;
               case "5":
-              fulano01.registrarTreino(Treino.natacao);
+                fulano01.registrarTreino(Treino.natacao);
                 break;
               case "6":
-              fulano01.registrarTreino(Treino.patins);
+                fulano01.registrarTreino(Treino.patins);
+                break;
+              case "7":
+                print(
+                    "Quantas calorias foram gastas neste outro exercício? (Somente números inteiros)");
+                
+                String? caloriasOutras = stdin.readLineSync();
+                if (caloriasOutras != null) {
+                  fulano01.adicionarCalorias = int.parse(caloriasOutras);
+                } else {
+                  print("Valor de calorias inválido! Tente novamente.");
+                }
                 break;
               default:
                 print("Exercício não listado no menu. Tente novamente.");

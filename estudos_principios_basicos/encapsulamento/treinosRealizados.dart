@@ -14,8 +14,14 @@ class Atleta {
 
   Atleta({required this.nome});
 
+  // Método GET para visualizar uma variável privada fora da classe
   List get estatisticaTreinos {
     return [_calorias, _treinoTotal];
+  }
+
+  // Método SET para alterar uma variável privada fora da classe
+  void set adicionarCalorias(int caloriasAdicionais) {
+    _calorias += caloriasAdicionais;
   }
 
   void registrarTreino(Treino treinoRealizado) {
