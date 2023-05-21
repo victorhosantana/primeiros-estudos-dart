@@ -10,6 +10,8 @@ void main() {
   amargo1.assarMassa();
   branco1.fazerRecheio();
   branco1.assarMassa();
+  banana1.fazerRecheio();
+  banana1.assarMassa();
 }
 
 // Superclasse
@@ -27,29 +29,32 @@ class Frutas extends Recheios implements Bolo {
 
   @override
   void fazerRecheio() {
-    print("Para fazer um bolo $sabor de fruta, primeiro é preciso descascar a $nome.");
+    print(
+        "Para fazer um bolo $sabor de fruta, primeiro é preciso descascar a $nome.");
   }
 
   @override
-  void assarMassa(){
-    print("Por fim, juntar o total de $peso gramas de recheio à farinha, ovos e açúcar e colocar para assar.");
+  void assarMassa() {
+    print(
+        "Por fim, juntar o total de $peso gramas de recheio à farinha, ovos e açúcar e colocar para assar.");
   }
-  }
-
+}
 
 // Subclasse 2
 class Chocolates extends Recheios implements Bolo {
   String? cor;
   Chocolates(String nome, double peso, {this.cor}) : super(nome, peso);
-  
+
   @override
-  void fazerRecheio(){
-    print("Para fazer um bolo de chocolate, primeiro é preciso cortar o $nome em pedaços pequenos.");
+  void fazerRecheio() {
+    print(
+        "Para fazer um bolo de chocolate, primeiro é preciso cortar o $nome em pedaços pequenos.");
   }
 
   @override
-  void assarMassa(){
-    print("Por fim, juntar o total de $peso gramas de recheio à farinha, ovos e açúcar e colocar para assar.");
+  void assarMassa() {
+    print(
+        "Por fim, juntar o total de $peso gramas de recheio à farinha, ovos e açúcar e colocar para assar.");
   }
 }
 
